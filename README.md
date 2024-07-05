@@ -48,7 +48,7 @@ Home Page
 
 Add Post
 
-<img src="./src/app/assets/addpost.PNG">
+<img src=".\posts-app\src\app\assets\home.PNG">
 
 Edit Post
 
