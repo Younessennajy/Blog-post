@@ -1,0 +1,20 @@
+<h1>Ajouter un post</h1>
+<div class="container">
+  <form class="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Ex. Razza" id="title" [(ngModel)]="title" name="title">
+    </mat-form-field>
+    
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" id="imgUpload">
+
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="selected-image">
+    
+    <mat-form-field class="full-width">
+      <mat-label>Content</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." id="content" [(ngModel)]="content" name="content"></textarea>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!title || !content">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+
+<form action="">
+  <mat-form-field class="filter">
+    <mat-label>Filter</mat-label>
+    <input matInput [formControl]="filterControl" placeholder="Search by title">
+  </mat-form-field>
+
+
+  <div *ngIf="(filteredPosts$ | async) as posts" class="post-container">
+    <mat-card class="card-class"  *ngFor="let post of posts">
+  <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="post.img" alt="Image" class="image mat-card-image">
+
+    <mat-card-content>
+      <p>
+        {{ post.content }}
+      </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-menu-item  *ngIf="post.id" (click)="editPost(post.id)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-menu-item  *ngIf="post.id" (click)="onDelete(post.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+</div>
+</form>

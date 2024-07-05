@@ -5,7 +5,9 @@
   "projects": {
     "posts-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "standalone": false
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -27,6 +29,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -90,6 +93,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b8292c90-62f1-4131-b870-ff00c3e8c024"
   }
 }
